@@ -39,7 +39,6 @@ The project consists of the following files:
 3. script.js
    Contains the logic for balance updates, deposits, withdrawals, and validations.
 
----
 
 **HTML Implementation** (index.html)
 
@@ -140,28 +139,11 @@ The UI adjusts automatically for:
 3. Laptops
 4. Desktop screens
 
----
 
-How to Run the Project
 
-1. Download or clone the project files
-2. Ensure index.html, styles.css, and script.js are in the same folder
-3. Open index.html in any modern web browser
+***Glossary of Terms***
 
----
-
-Future Enhancements
-
-1. Add transaction history
-2. Implement user authentication
-3. Add dark mode
-4. Store data using local storage or a database
-
----
-
-Glossary of Terms
-
-General Programming Terms
+**General Programming Terms**
 
 1. UI – User Interface
    The visual part of an application that users interact with.
@@ -177,7 +159,7 @@ General Programming Terms
 
 ---
 
-JavaScript Abbreviations
+**JavaScript Abbreviations**
 
 1. JS – JavaScript
 2. DOM – Document Object Model
@@ -186,7 +168,7 @@ JavaScript Abbreviations
 
 ---
 
-CSS Abbreviations
+**CSS Abbreviations**
 
 1. CSS – Cascading Style Sheets
 2. RGB – Red Green Blue
@@ -196,7 +178,7 @@ CSS Abbreviations
 
 ---
 
-HTML Abbreviations
+**HTML Abbreviations**
 
 1. HTML – HyperText Markup Language
 2. URL – Uniform Resource Locator
