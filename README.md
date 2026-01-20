@@ -1,270 +1,204 @@
 # 24BDA70037-1B – Nikunj Vivek Garg
 
- Simple Banking UI – Practical Implementation
+ Simple Banking UI – Responsive Web Application
 
-## 1. Aim of the Experiment
 
-The aim of this experiment is to design and develop a Simple Banking User Interface using HTML, CSS, and JavaScript. The application allows users to view their account balance, perform deposit and withdrawal operations, validate user inputs, and store balance data persistently using browser storage.
+**Project Overview**
 
-## 2. Software and Tools Used
+This project is a simple and responsive banking user interface developed using HTML, CSS, and JavaScript.
+It allows users to deposit and withdraw money while displaying the updated balance instantly.
+The interface is designed using a mobile-first approach so that it works smoothly on mobile phones, tablets, and desktop screens.
 
-HTML5 is used to create the structure of the application.
-CSS3 is used for styling and making the interface responsive.
-JavaScript (ES6) is used to implement application logic and interactivity.
-Browser localStorage is used to store balance data.
-VS Code is used as the code editor.
-Google Chrome is used for testing and debugging.
+**Objectives of the Project**
 
-## 3. Project Description
-
-This project represents a basic banking system interface developed using front-end web technologies. The application starts with a default balance and allows the user to deposit or withdraw money. All validations are performed on the client side. The balance is stored using localStorage, ensuring that the data remains available even after the page is refreshed or the browser is reopened.
-
-## 4. Project Folder Structure
-
-```
-Simple-Banking-UI/
-│
-├── index.html      – Defines the structure of the user interface
-├── styles.css      – Handles styling and responsiveness
-├── script.js       – Contains application logic
-└── README.md       – Project documentation
-```
-
-## 5. Implementation Details
-
-### 5.1 HTML Implementation (index.html)
-
-The HTML file provides the basic structure of the banking interface.
-
-#### Balance Display
-
-```html
-<h1 id="balance-display" class="balance-display">
-  Balance: $1000
-</h1>
-```
-
-This element displays the current account balance. It is dynamically updated using JavaScript whenever a transaction occurs.
+1. To design a clean and user-friendly banking interface
+2. To implement deposit and withdrawal functionality
+3. To validate user input before processing transactions
+4. To make the application fully responsive across devices
 
 ---
 
-#### Amount Input Field
+**Technologies Used**
 
-```html
-<input
-  type="number"
-  id="amount"
-  class="input-field"
-  step="0.01"
-/>
-```
-
-This input field allows the user to enter an amount for deposit or withdrawal. The step attribute enables decimal values.
+1. HTML5 for structure and layout
+2. CSS3 for styling and responsive design
+3. JavaScript for logic and interactivity
 
 ---
 
-#### Action Buttons
+**Project Structure**
 
-```html
-<button type="button" onclick="handleDeposit()">
-  Deposit
-</button>
+The project consists of the following files:
 
-<button type="button" id="withdraw-btn">
-  Withdraw
-</button>
-```
+1. index.html
+   Defines the structure of the banking interface.
 
-The deposit button directly calls a JavaScript function, while the withdraw button is handled using an event listener.
+2. styles.css
+   Handles the layout, colors, fonts, and responsiveness of the UI.
 
----
-
-#### Error Message
-
-```html
-<p id="error-message" class="error-message">
-  Invalid amount!
-</p>
-```
-
-This element is used to display error messages such as invalid input or insufficient balance.
+3. script.js
+   Contains the logic for balance updates, deposits, withdrawals, and validations.
 
 ---
 
-### 5.2 CSS Implementation (styles.css)
+**HTML Implementation** (index.html)
 
-CSS is used to design a clean and user-friendly interface.
+The HTML file provides a semantic and accessible structure for the application.
+It includes a balance display, an input field for amount entry, and buttons for deposit and withdrawal.
 
-#### CSS Variables
+Code Snippet:
+
+```html
+<main class="banking-container">
+  <h1 id="balance-display" class="balance-display">₹0.00</h1>
+
+  <form class="banking-form">
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" placeholder="Enter amount" />
+
+    <div class="actions">
+      <button type="button">Deposit</button>
+      <button type="button">Withdraw</button>
+    </div>
+  </form>
+</main>
+```
+
+---
+
+**CSS Implementation** (styles.css)
+
+The CSS file is responsible for visual styling and responsiveness.
+A mobile-first approach is used along with Flexbox, Grid, and media queries.
+
+Key Features of Styling:
+
+1. Centered layout using Flexbox
+2. Responsive container using max-width
+3. Grid-based button layout
+4. Media queries for tablets and desktops
+
+Code Snippet:
 
 ```css
-:root {
-  --primary-blue: #1e40ff;
-  --error-red: #dc3545;
+.banking-container {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
 }
-```
 
-CSS variables are defined to manage colors efficiently and make future design changes easier.
-
-#### Input Validation Styling
-
-```css
-.input-field.valid {
-  border-color: #22c55e;
+.actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
 }
-```
 
-When the user enters a valid amount, the input field border turns green to provide visual feedback.
-
-#### Responsive Design
-
-```css
-@media (min-width: 480px) {
-  .banking-container {
-    width: calc(100% - 52px);
+@media (min-width: 600px) {
+  .actions {
+    grid-template-columns: 1fr 1fr;
   }
 }
 ```
 
-Media queries are used to ensure that the interface adapts properly to different screen sizes.
+---
 
+**JavaScript Functionality** (script.js)
 
-### 5.3 JavaScript Implementation (script.js)
+JavaScript is used to handle the banking logic.
 
-The JavaScript file controls the functionality and behavior of the application.
+Main Responsibilities:
 
-### Balance Initialization and Storage
+1. Store and update the account balance
+2. Handle deposit and withdrawal actions
+3. Validate user input
+4. Display error messages when needed
 
-```javascript
-let balance =
-  parseFloat(localStorage.getItem("bankBalance")) || 1000;
-```
+Implementation Approach:
 
-The balance is retrieved from localStorage if available. If no saved value exists, a default balance of 1000 is assigned.
+1. Read the entered amount from the input field
+2. Check if the value is valid and greater than zero
+3. Update the balance based on the selected action
+4. Display the updated balance instantly
 
 ---
 
-#### Updating the Balance
+Responsive Design Explanation
 
-```javascript
-function updateBalance() {
-  balanceDisplay.textContent = `Balance: ${balance}`;
-  localStorage.setItem("bankBalance", balance);
-}
-```
+The application is fully responsive due to the following reasons:
 
-This function updates the balance shown on the screen and saves the updated value in localStorage.
+1. Mobile-first CSS design
+2. Flexible widths instead of fixed values
+3. Grid layout that adapts to screen size
+4. Media queries for larger screens
 
----
+The UI adjusts automatically for:
 
-#### Input Validation
-
-```javascript
-function validateAmount(amount) {
-  return amount > 0 && !isNaN(amount);
-}
-```
-
-This function ensures that the entered amount is a valid positive number.
+1. Mobile devices
+2. Tablets
+3. Laptops
+4. Desktop screens
 
 ---
 
-#### Deposit Functionality
+How to Run the Project
 
-```javascript
-function handleDeposit() {
-  const amount = parseFloat(amountInput.value);
-
-  if (validateAmount(amount)) {
-    balance += amount;
-    updateBalance();
-    amountInput.value = "";
-  } else {
-    showError();
-  }
-}
-```
-
-The deposit logic validates the input, adds the amount to the balance, updates the display, and clears the input field.
+1. Download or clone the project files
+2. Ensure index.html, styles.css, and script.js are in the same folder
+3. Open index.html in any modern web browser
 
 ---
 
-#### Withdrawal Functionality
+Future Enhancements
 
-```javascript
-withdrawBtn.addEventListener("click", () => {
-  const amount = parseFloat(amountInput.value);
-
-  if (amount > balance) {
-    errorMessage.textContent = "Insufficient funds!";
-  } else {
-    balance -= amount;
-    updateBalance();
-  }
-});
-```
-
-This logic prevents overdrawing the account and displays an error message if the balance is insufficient.
+1. Add transaction history
+2. Implement user authentication
+3. Add dark mode
+4. Store data using local storage or a database
 
 ---
 
-#### Real-Time Input Feedback
+Glossary of Terms
 
-```javascript
-amountInput.addEventListener("input", () => {
-  if (validateAmount(amount)) {
-    amountInput.classList.add("valid");
-  }
-});
-```
+General Programming Terms
 
-As the user types, the input is validated in real time and visual feedback is provided.
+1. UI – User Interface
+   The visual part of an application that users interact with.
 
----
+2. Responsive Design
+   A design approach that ensures a website works on all screen sizes.
 
-## 6. Features Implemented
+3. Validation
+   The process of checking whether user input is correct.
 
-Deposit functionality
-Withdrawal functionality
-Input validation
-Error handling
-Real-time balance updates
-Persistent storage using localStorage
-Responsive user interface
+4. Logic
+   The set of rules that control how a program works.
 
 ---
 
-## 7. Result
+JavaScript Abbreviations
 
-The application successfully performs deposit and withdrawal operations with proper validation. The account balance remains stored even after refreshing the page.
+1. JS – JavaScript
+2. DOM – Document Object Model
+3. API – Application Programming Interface
+4. UI – User Interface
 
-## 8. Glossary of Terms
+---
 
-**General Programming Terms**
+CSS Abbreviations
 
-User Interface (UI) – The visual part of an application that users interact with
-Local Storage – Browser feature used to store data persistently
-Event Handler – A function that runs in response to user actions
-Responsive Design – Designing layouts that adapt to different screen sizes
+1. CSS – Cascading Style Sheets
+2. RGB – Red Green Blue
+3. px – Pixel
+4. vh – Viewport Height
+5. vw – Viewport Width
 
-**JavaScript Abbreviations**
+---
 
-JS – JavaScript
-DOM – Document Object Model
-NaN – Not a Number
-API – Application Programming Interface
+HTML Abbreviations
 
-**CSS Abbreviations**
-
-CSS – Cascading Style Sheets
-PX – Pixels
-REM – Root Em unit
-FR – Fractional unit used in CSS Grid
-Media Query – CSS rule used for responsive design
-
-**HTML Abbreviations**
-
-HTML – HyperText Markup Language
-DOCTYPE – Document Type Declaration
-UTF – Unicode Transformation Format
-ID – Identifier
+1. HTML – HyperText Markup Language
+2. URL – Uniform Resource Locator
+3. ID – Identifier
+4. Meta – Metadata
