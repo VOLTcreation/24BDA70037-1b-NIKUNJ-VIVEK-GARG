@@ -65,7 +65,7 @@ Code Snippet:
 
 ---
 
-**CSS Implementation** (styles.css)
+*CSS Implementation* (styles.css)
 
 The CSS file is responsible for visual styling and responsiveness.
 A mobile-first approach is used along with Flexbox, Grid, and media queries.
