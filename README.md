@@ -141,7 +141,7 @@ The UI adjusts automatically for:
 
 
 
-## ***Glossary of Terms***
+## **Glossary of Terms**
 
 **General Programming Terms**
 
