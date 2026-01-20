@@ -3,13 +3,13 @@
  Simple Banking UI – Responsive Web Application
 
 
-# Project Overview
+## Project Overview
 
 This project is a simple and responsive banking user interface developed using HTML, CSS, and JavaScript.
 It allows users to deposit and withdraw money while displaying the updated balance instantly.
 The interface is designed using a mobile-first approach so that it works smoothly on mobile phones, tablets, and desktop screens.
 
-**Objectives of the Project**
+## Objectives of the Project
 
 1. To design a clean and user-friendly banking interface
 2. To implement deposit and withdrawal functionality
@@ -18,7 +18,7 @@ The interface is designed using a mobile-first approach so that it works smoothl
 
 ---
 
-**Technologies Used**
+## Technologies Used
 
 1. HTML5 for structure and layout
 2. CSS3 for styling and responsive design
@@ -26,7 +26,7 @@ The interface is designed using a mobile-first approach so that it works smoothl
 
 ---
 
-**Project Structure**
+## Project Structure**
 
 The project consists of the following files:
 
@@ -141,7 +141,7 @@ The UI adjusts automatically for:
 
 
 
-***Glossary of Terms***
+## ***Glossary of Terms***
 
 **General Programming Terms**
 
